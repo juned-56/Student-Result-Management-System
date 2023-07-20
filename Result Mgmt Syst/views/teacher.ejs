@@ -1,0 +1,174 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Teacher Dashboard</title>
+  </head>
+  <body>
+    <h1>Teacher Dashboard</h1>
+
+    <h2>Add Student</h2>
+<form action="/add" method="POST">
+  <label for="rollNumber">Roll Number:</label>
+  <input type="text" id="rollNumber" name="rollNumber" required>
+  <br>
+  <label for="dob">Date of Birth:</label>
+  <input type="date" id="dob" name="dob" required>
+  <br>
+  <label for="marks">Marks:</label>
+  <input type="number" id="marks" name="marks" required>
+  <br>
+  <button type="submit" class="btn">Add</button>
+</form>
+    <% if (typeof error !== 'undefined' && error) { %>
+      <p><%= error %></p>
+    <% } else { %>
+      <% if (results.length === 0) { %>
+        <p>No student records found.</p>
+      <% } else { %>
+        <% for (let i = 0; i < results.length; i++) { %>
+          <div>
+            <p>Roll Number: <%= results[i].roll_number %></p>
+            <p>Date of Birth: <%= results[i].dob.toDateString() %></p>
+            <p>Marks: <%= results[i].marks %></p>
+            <a href="/edit/<%= results[i].roll_number %>" class="btn">Edit</a>
+            <a href="/delete/<%= results[i].roll_number %>" class="btn">Delete</a>
+          </div>
+          <hr>
+        <% } %>
+      <% } %>
+    <% } %>
+    <a href="/" class="btn">Back</a>
+ 
+
+
+<hr>
+</body>
+</html> 
+ -->
+
+
+
+
+
+ <!-- teacher.ejs
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Teacher Dashboard</title>
+  </head>
+  <body>
+    <% if (error) { %>
+      <p><%= error %></p>
+    <% } %>
+
+    <h2>Add Student</h2>
+    <form action="/add" method="POST">
+      <label for="rollNumber">Roll Number:</label>
+      <input type="text" id="rollNumber" name="rollNumber" required>
+      <br>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+      <br>
+      <label for="marks">Marks:</label>
+      <input type="number" id="marks" name="marks" required>
+      <br>
+      <button type="submit" class="btn">Add</button>
+    </form>
+
+    <hr>
+
+    <% if (results.length === 0) { %>
+      <p>No student records found.</p>
+    <% } else { %>
+      <% results.forEach((result) => { %>
+        <div>
+          <p>Roll Number: <%= result.roll_number %></p>
+          <p>Name: <%= result.name %></p>
+          <p>Date of Birth: <%= result.dob.toDateString() %></p>
+          <p>Marks: <%= result.marks %></p>
+          <a href="/edit?rollNumber=<%= result.roll_number %>" class="btn">Edit</a>
+          <a href="/delete?rollNumber=<%= result.roll_number %>" class="btn">Delete</a>
+        </div>
+        <hr>
+      <% }) %>
+    <% } %>
+    <a href="/teacher/logout" class="btn">Logout</a>
+    <a href="/" class="btn">Back</a>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Teacher Dashboard</title>
+  </head>
+  <body>
+    <ul>
+      <li><a class="active" href="/" class="btn">Logout</a></li>
+    </ul>
+    <% if (error) { %>
+      <p><%= error %></p>
+    <% } %>
+    
+    <h2>Add Student</h2>
+    <form action="/add" method="POST">
+      <label for="rollNumber">Roll Number</label>
+      <input type="text" id="rollNumber" name="rollNumber" required>
+      <br>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required>
+      <br>
+      <label for="marks">Marks</label>
+      <input type="number" id="marks" name="marks" required>
+      <br>
+      <button type="submit" class="btn" style="border-radius: 30px;">Add</button>
+    </form>
+    <hr>
+<h4 >All Students</h4>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Roll No.</th>
+        <th>Name</th>       
+        <th>Date of Birth</th>
+        <th>Score</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (results.length === 0) { %>
+        <p>No student records found.</p>
+      <% } else { %>
+        <% results.forEach((result) => { %>
+          <div>
+            <tr class="head">
+                <td><%= result.roll_number %></td>
+                <td><%= result.name %></td>               
+                <td><%= result.dob.toDateString() %></td>
+                <td><%= result.marks %></td> 
+                <td>
+                  <a href="/edit?rollNumber=<%= result.roll_number %>"><img style="margin: 0px 5px;" src="https://img.icons8.com/material-outlined/30/000000/edit.png"/></a>
+                  <a href="/delete?rollNumber=<%= result.roll_number %>"><img style="margin: 0px 5px;" src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+                </td>
+              </tr>
+        <%}) %>
+        <% } %>
+    </tbody>
+  </table>
+</body>
+</html>

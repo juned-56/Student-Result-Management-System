@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Result Management Application</title>
+  </head>
+  <body>
+    <h1>Result Management Application</h1>
+    <!-- <div class="buttons">  -->
+      <h2>Student Login</h2>
+    <form action="/student" method="POST">
+      <label for="rollNumber">Roll Number:</label>
+      <input type="text" id="rollNumber" name="rollNumber" required>
+      <br>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+      <br>
+      <button type="submit" class="btn" style="border-radius: 30px;">View Result</button>
+    </form>
+    <!-- </div> -->
+      <h2>Teacher Login</h2>
+    <form action="/teacher/login" method="POST">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+      <br>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <button type="submit" class="btn" style="border-radius: 30px;">Login</button>
+    </form>
+  </div>
+  </body>
+</html>

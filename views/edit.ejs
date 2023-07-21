@@ -1,0 +1,34 @@
+<!-- edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Edit Student</title>
+  </head>
+  <body>
+    <ul>
+      <li><a class="active" href="/" class="btn">Logout</a></li>
+    </ul>
+    <h2>Edit Student</h2>
+    <form action="/edit" method="POST">
+      <input type="hidden" name="rollNumber" value="<%= student.roll_number %>">
+      <!--new added-->
+      <label for="name">Name</label>
+      <input type="text" name="name" value="<%= student.name %>">
+      <br>
+      <!--new added-->
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" value="<%= student.dob.toISOString().substr(0, 10) %>" required>
+      <br>
+      <label for="marks">Marks</label>
+      <input type="number" id="marks" name="marks" value="<%= student.marks %>" required>
+      <br>
+      <button type="submit" class="btn" style="border-radius: 30px;">Update</button>
+    </form>
+
+    <a href="/teacher" class="btn" style="border-radius: 30px;">Back</a>
+  </body>
+</html>

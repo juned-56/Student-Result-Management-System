@@ -1,0 +1,92 @@
+body {
+    text-align: center;
+  }
+  
+  h1 {
+    margin-top: 50px;
+  }
+  
+  .buttons {
+    margin-top: 100px;
+    border-radius: 2%;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #337ab7;
+    color: #fff;
+    text-decoration: none;
+  }
+
+
+ /*******************************index.ejs *********************************/
+ form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="password"] {
+  padding: 5px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+
+button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  margin-right: 10px;
+}
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+th, td {
+  background-color: #96D4D4;
+}
+
+/* Nav Bar css */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #65bcf3;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 30px;
+}
+
+li a:hover:not(.active) {
+  background-color: #89befa;
+}
+
+.active {
+  background-color: #4a10db;
+}

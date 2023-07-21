@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Student Result</title>
+  </head>
+  <body>
+    <ul>
+      <li><a class="active" href="/" class="btn">Logout</a></li>
+    </ul>
+    <h1>Student Result</h1>
+
+    <% if (student) { %>
+      <p>Roll Number: <%= student.roll_number %></p>
+      <p>Date of Birth: <%= student.dob.toDateString() %></p>
+      <p>Marks: <%= student.marks %></p>
+      <p>Name: <%= student.name %></p>
+    <% } else { %>
+      <p>No student record found.</p>
+    <% } %>
+    <!-- <a href="/" class="btn">Back</a> -->
+  </body>
+</html>

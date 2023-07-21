@@ -41,3 +41,18 @@ marks (integer)
 name (varchar)
 
 6. Open your web browser and visit http://localhost:3000 to access the application.
+
+7. Teacher login
+username: teacher123
+password: password123
+
+<img width="959" alt="image" src="https://github.com/juned-56/Student-Result-Management-System/assets/73770571/03160931-3a22-42ed-bc5c-1bb147157b6c">
+
+<img width="960" alt="image" src="https://github.com/juned-56/Student-Result-Management-System/assets/73770571/7d3fff04-e4f1-4d2f-813b-b7179473326e">
+
+<img width="960" alt="image" src="https://github.com/juned-56/Student-Result-Management-System/assets/73770571/d23159f6-d170-4e5f-aa40-0197fd12ed55">
+
+<img width="960" alt="image" src="https://github.com/juned-56/Student-Result-Management-System/assets/73770571/eafeb718-96da-4ec4-a050-6ea019a683b8">
+
+
+
